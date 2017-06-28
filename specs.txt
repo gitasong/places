@@ -1,0 +1,17 @@
+It needs to be able to create a place.
+
+It needs to be able to save a place.
+
+It needs to be able to retrieve a place.
+
+(It needs to be able to delete a place.)
+
+It needs to be able to create additional places.
+
+It needs to be able to save multiple places.
+
+It needs to be able to retrieve mutliple places.
+
+It needs to be able to delete multiple places.
+
+It needs to be able to display the places, whether single or multiple.
