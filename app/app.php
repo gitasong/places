@@ -3,6 +3,11 @@
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/Place.php";
 
+    session_start();
+    if (empty($_SESSION['saved_places'])) {
+        $_SESSION['saved_places'] = array();
+    }
+
     $app = new Silex\Application();
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -19,7 +24,10 @@
         return $app['twig']->render('create_place.html.twig', array('newplace' => $place));  // renders 'You've created a place!' template w/'newplace' as twig template variable
     });
 
-
+    $app->post("/delete_places", function() use ($app) {
+        Place::deleteAll();
+        return $app['twig']->render('delete_place.html.twig');
+    });
 
     return $app;
 ?>
