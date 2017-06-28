@@ -8,13 +8,13 @@
     {% if places is not empty %}
         <p>Here are all of the places I have been:</p>
         <ul>
-            {% for task in tasks %}
+            {% for place in places %}
                 <li>{{ place.getCity }}</li>
             {% endfor %}
         </ul>
     {% endif %}
 
-    <form action='/view_places' method='post'>
+    <form action='/new_places' method='post'>
         <label for='city'>Enter city here:</label>
         <input id='city' name='city' type='text'>
 

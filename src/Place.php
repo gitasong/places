@@ -18,19 +18,19 @@ class Place
         return $this->city;
     }
 
-    function save()
+    function save()  // pushes each new place to array; saves in $_SESSION variable 'saved_places'
     {
-        array_push($_SESSION[''], $this);
+        array_push($_SESSION['saved_places'], $this);
     }
 
-    static function getAll()
+    static function getAll()  // retrieves saved_places from $_SESSION variable
     {
-        return $_SESSION[''];
+        return $_SESSION['saved_places'];
     }
 
-    static function deleteAll()
+    static function deleteAll()  // deletes saved_places array
     {
-        $_SESSION[''] = array();
+        $_SESSION['saved_places'] = array();
     }
 }
 ?>
