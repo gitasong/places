@@ -14,14 +14,20 @@
         </ul>
     {% endif %}
 
-    <form action='/places' method='post'>
-        <label for='city'>Enter city here:</label>
+    <form enctype="multipart/form-data" action='/places' method='post'>
+        <label for='city'>Enter name of city here:</label>
         <input id='city' name='city' type='text'>
         <br>
-        <label for='image'>Upload photo:</label>
+        <label for='image'>Upload a destination photo:</label>
         <input id='image' name='image' type='file'>
         <br>
-        <button type='submit'>Add city</button>
+        <label for='memory'>Describe your favorite memory:</label>
+        <input id='memory' name='memory' type='text'>
+        <br>
+        <label for='duration'>Duration of stay (nights):</label>
+        <input id='duration' name='duration' type='number'>
+        <br>
+        <button type='submit'>Add Place</button>
     </form>
 
     <form action='/delete_places' method='post'>

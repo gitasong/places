@@ -19,7 +19,7 @@
     });
 
     $app->post("/places", function() use ($app) {
-        $place = new Place($_POST['city'], $_POST['image']);  //creates new Place w/data from city field
+        $place = new Place($_POST['city'], $_FILES['image'], $_POST['memory'], $_POST['duration']);  //creates new Place w/data from city field
         $place->save();  //saves new task to $_SESSION variable 'saved_places' using save() method
         return $app['twig']->render('create_place.html.twig', array('newplace' => $place));  // renders 'You've created a place!' template w/'newplace' as twig template variable
     });

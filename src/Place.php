@@ -2,12 +2,19 @@
 class Place
 {
     private $city;
-    private $image_path;
+    private $image;
+    private $memory;
+    private $duration;
 
-    function __construct($city, $image_path)
+    function __construct($city, $image, $memory, $duration)
     {
+        // $uploaddir = '/var/www/uploads/';
+        // $uploadfile = $uploaddir . basename($_FILES['image']['type']);
         $this->city = $city;
-        $this->image_path = $image_path;
+        // $this->image = $uploadfile;
+        $this->memory = $memory;
+        $this->duration = $duration;
+        // var_dump($image);
     }
 
     function setCity($new_city)
@@ -20,14 +27,34 @@ class Place
         return $this->city;
     }
 
-    function setImagePath($new_image_path)
+    function setImage($new_image)
     {
-        return $this->new_image_path;
+        return $this->new_image;
     }
 
-    function getImagePath()
+    function getImage()
     {
-        return $this->image_path;
+        return $this->image;
+    }
+
+    function setMemory($new_memory)
+    {
+        return $this->new_memory;
+    }
+
+    function getMemory()
+    {
+        return $this->memory;
+    }
+
+    function setDuration($new_duration)
+    {
+        return $this->new_duration;
+    }
+
+    function getDuration()
+    {
+        return $this->duration;
     }
 
     function save()  // pushes each new place to array; saves in $_SESSION variable 'saved_places'
